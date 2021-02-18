@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
-import {
-  FileOutlined,
-  PieChartOutlined,
-  DesktopOutlined,
-} from '@ant-design/icons';
+import { PieChartOutlined, MobileOutlined } from '@ant-design/icons';
 
 // import { Container } from './styles';
 
@@ -29,19 +26,16 @@ const OuterLayout: React.FC = ({ children }) => {
         <div style={logoStyle} />
         <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
           <Menu.Item key="1" icon={<PieChartOutlined />}>
-            Option 1
+            <Link to="/">Dashboard</Link>
           </Menu.Item>
-          <Menu.Item key="2" icon={<DesktopOutlined />}>
-            Option 2
-          </Menu.Item>
-          <Menu.Item key="9" icon={<FileOutlined />}>
-            Files
+          <Menu.Item key="2" icon={<MobileOutlined />}>
+            <Link to="/devices">Dispositivos</Link>
           </Menu.Item>
         </Menu>
       </Sider>
       <Layout>
         <Header style={{ padding: 0, background: '#fff' }} />
-        <Content style={{ margin: '0 16px' }}>{children}</Content>
+        <Content>{children}</Content>
       </Layout>
     </Layout>
   );
