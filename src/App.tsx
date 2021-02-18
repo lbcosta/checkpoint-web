@@ -1,7 +1,8 @@
 import React from 'react';
+import OuterLayout from './OuterLayout';
 
 const App: React.FC = () => {
-  return <h1>Checkpoint Web</h1>;
+  return <OuterLayout />;
 };
 
 export default App;
